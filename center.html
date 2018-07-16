@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>居中</title>
+</head>
+<body>
+    <div class="container1_1">
+        <p class="item1_1">inline元素水平居中：text-align:center</p>
+    </div>
+    <div class="container1_2">
+        <div class="item1_2">block元素水平居中:margin:auto;</div>
+    </div>
+    <div class="container1_3">
+        <div class="item1_3">绝对定位元素水平居中：left+margin 需要知道宽度</div>
+    </div>
+    <div class="container2_1">
+        <p class="item2_1">inline元素垂直居中：line-height = height </p>
+    </div>
+    <div class="container2_2">
+        <div class="item2_2">绝对定位元素：top+margin 需要知道尺寸 兼容性好</div>
+    </div>
+    <div class="container2_3">
+        <div class="item2_3">绝对定位元素：transform 兼容性差 不需要知道尺寸</div>
+    </div>
+    <div class="container2_4">
+        <div class="item2_4">绝对定位元素：margin:auto 兼容性好还不需要知道尺寸</div>
+    </div>
+</body>
+<style type="text/css">
+.container1_1{
+    background-color: aquamarine;
+}
+.item1_1{
+    background-color: darksalmon;
+    text-align: center;
+}
+.container1_2{
+    background-color: aquamarine;
+    width:300px;
+    height: 100px;
+}
+.item1_2{
+    background-color: darksalmon;
+    width: 150px;
+    margin: auto;
+}
+.container1_3{
+    margin-top: 100px;
+    position: relative;
+    background-color: aquamarine;
+    width: 500px;
+    border: 1px solid black;
+}
+.item1_3{
+    background-color: darksalmon;
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    margin: -100px;
+}
+.container2_1{
+    background-color: aquamarine;
+}
+.item2_1{
+    height: 50px;
+    line-height: 50px;
+}
+.container2_2{
+    margin-top: 50px;
+    position: relative;
+    background-color: aquamarine;
+    height: 200px;
+}
+.item2_2{
+    height: 100px;
+    position: absolute;
+    background-color: darksalmon;
+    top: 50%;
+    margin-top: -50px;
+}
+.container2_3{
+    position: relative;
+    background-color: aqua;
+    height: 200px;
+}
+.item2_3{
+    position: absolute;
+    background-color: darksalmon;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    height: 100px;
+}
+.container2_4{
+    position: relative;
+    background-color: aquamarine;
+    height: 200px;
+}
+.item2_4{
+    position: absolute;
+    background-color: darksalmon;
+    height: 100px;
+    top: 0 ;
+    bottom: 0 ;
+    left: 0 ;
+    right: 0;
+    margin: auto;
+}
+</style>
+</html>
