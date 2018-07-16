@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>js输出数组金字塔</title>
+</head>
+<body>
+<div id="one"></div>
+<script type="text/javascript">
+    function gold(num) {
+        let k = 0;
+        let sum = (1+num)*num/2 ;
+        let old = [] ;
+        let show = [];
+        for (let i = 1 ;i <= sum ; i++) {
+            old.push(i);
+        }
+        for( let i = 1 ; i <= num ;i ++){
+            // let number ;
+            for (let j = 1 ; j <= i ;j++){
+                show.push(old[k]) ;
+                k ++;
+                // number = j ;
+            }
+            show.push('\n');
+        }
+        for (let i = 0 ; i < show.length ; i++) {
+            // console.log(show[i]);
+            if (show[i] === '\n') {
+                document.write('</br>');
+            } else {
+                document.write(show[i]+' ');
+            }
+        }
+    }
+    gold(25);
+</script>
+</body>
+</html>

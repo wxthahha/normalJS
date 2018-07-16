@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>flex布局</title>
+    <style>
+        .one {
+            background-color: aqua;
+            text-align: center;
+        }
+        .two {
+            background-color: aqua;
+            text-align: center;
+        }
+        .left {
+            text-align: left;
+        }
+        .item1 {
+            width : 100px;
+            height : 100px;
+            margin: 10px 10px 10px 10px;
+            background-color: yellow;
+        }
+        .item2 {
+            width : 100px;
+            height : 150px;
+            margin: 10px 10px 10px 10px;
+            background-color: yellowgreen;
+        }
+        .item3 {
+            width : 100px;
+            height : 200px;
+            margin: 10px 10px 10px 10px;
+            background-color: greenyellow;
+        }
+        .flex-direction {
+            background-color: antiquewhite;
+        }
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+        .row-reverse {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        .column {
+            display: flex;
+            flex-direction: column;
+        }
+        .column-reverse {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .flex-wrap {
+            background-color: beige;
+        }
+        .nowrap {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .wrap {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .wrap-reverse {
+            display: flex;
+            flex-wrap: wrap-reverse;
+        }
+        .flex-flow {
+            background-color: antiquewhite;
+        }
+        .flex-flow-one {
+            flex-flow: row-reverse wrap;
+        }
+        .justify-content {
+            background-color: antiquewhite;
+        }
+        .flex-start {
+            display: flex;
+            /*justify-content: flex-start;*//*从头按顺序排列*/
+            /*justify-content: flex-end;*//*相对终点线顺序排列*/
+            /*justify-content: center ;*//*居中排列*/
+            /*justify-content: space-between;*//*项目均匀分布，第一项在起点线，最后一项在终点线*/
+            /*justify-content: space-around;*//*项目均匀分布，每个项目左右两侧留白相等，两个项目之间的留白是单侧留白的double*/
+            justify-content : space-evenly ;/*项目均匀分布，项目之间以及项目和边框之间的间距相同*/
+        }
+        .align-items {
+            background-color: antiquewhite;
+        }
+        .align-items-example {
+            display: flex;
+            /*交叉轴方向拉伸显示*/
+            /*align-items: stretch;*/
+            /*项目按交叉轴起始线对齐*/
+            /*align-items: flex-start;*/
+            /*项目按交叉轴终点线对齐*/
+            /*align-items: flex-end;*/
+            /*交叉轴方向项目中间对齐*/
+            align-items: center;
+            /*交叉轴方向按第一行文字基线对齐*/
+            /*align-items: baseline;*/
+        }
+        .align-content {
+            background-color: antiquewhite;
+        }
+        .align-content-example {
+            border: 1px solid cadetblue;
+            display: flex;
+            flex-flow: wrap;
+            /**/
+            /*align-content: stretch ;*/
+            /*align-content: flex-start;*/
+            /*align-content: flex-end;*/
+            /*align-content: center;*/
+            /*align-content: space-between;*/
+            /*align-content: space-around;*/
+            align-content: space-evenly;
+        }
+        .order {
+            background-color: antiquewhite;
+        }
+        .order-example {
+            display: flex;
+            /*border: 1px solid cadetblue;*/
+        }
+        .flex-flow {
+            background-color: antiquewhite;
+        }
+        .flex-grow-example {
+            display: flex;
+        }
+        .flex-shrink {
+            background-color: antiquewhite;
+        }
+        .flex-shrink-example {
+            display: flex;
+        }
+        .flex-basis {
+            background-color: antiquewhite;
+        }
+        .flex-basis-example {
+            display: flex;
+        }
+        .flex {
+            background-color: antiquewhite;
+        }
+        .align-self {
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+   <div class="one">
+       <h1>flex容器属性</h1>
+       <div class="flex-direction">
+           <h2>flex-direction</h2>
+           <div class="flex-direction left row">
+               <div class="item1">one</div>
+               <div class="item1">two</div>
+               <div class="item1">three</div>
+           </div>
+           <div class="flex-direction left row-reverse">
+               <div class="item1">one</div>
+               <div class="item1">two</div>
+               <div class="item1">three</div>
+           </div>
+           <div class="flex-direction left column">
+               <div class="item1">one</div>
+               <div class="item1">two</div>
+               <div class="item1">three</div>
+           </div>
+           <div class="flex-direction left column-reverse">
+               <div class="item1">one</div>
+               <div class="item1">two</div>
+               <div class="item1">three</div>
+           </div>
+       </div>
+       <div class="flex-wrap">
+           <h2>flex-wrap</h2>
+           <div class="flex-wrap left nowrap">
+               <div style="height: 20px ; width: 500px ; background-color:
+#ffffff;">hhhhhhhhhhh</div>
+               <div style="height: 20px ; width: 600px ; background-color: yellow; ">hhhhhhhhhhh</div>
+               <div style="height: 20px ; width: 2000px ; background-color: #ffffff; ">hhhhhhhhhhh</div>
+           </div>
+           <div class="flex-wrap left wrap">
+               <div style="height: 20px ; width: 500px ; background-color:
+#ffffff;">hhhhhhhhhhh</div>
+               <div style="height: 20px ; width: 600px ; background-color: yellow; ">hhhhhhhhhhh</div>
+               <div style="height: 20px ; width: 2000px ; background-color: #ffffff; ">hhhhhhhhhhh</div>
+           </div>
+           <div class="flex-wrap left wrap-reverse">
+               <div style="height: 20px ; width: 500px ; background-color:
+#ffffff;">hhhhhhhhhhh</div>
+               <div style="height: 20px ; width: 600px ; background-color: yellow; ">hhhhhhhhhhh</div>
+               <div style="height: 20px ; width: 2000px ; background-color: #ffffff; ">hhhhhhhhhhh</div>
+           </div>
+       </div>
+       <div class="flex-flow">
+           <h2>flex-flow</h2>
+           <div class="flex-flow-one">
+               <div style="background-color: yellow ; margin: 10px 10px; width: 500px;">zuoshazi</div>
+               <div style="background-color: white ; margin: 10px 10px; width: 700px;">zuoshazizuoshazi</div>
+               <div style="background-color: yellow ; margin: 10px 10px; width: 2000px;">zuoshazizuoshazizuoshazi</div>
+           </div>
+       </div>
+       <div class="justify-content">
+           <h2>justify-content 主轴的对齐方式</h2>
+           <div class="flex-start">
+               <div class="item1">one</div>
+               <div class="item1">two</div>
+               <div class="item1">three</div>
+           </div>
+       </div>
+       <div class="align-items">
+           <h2>align-items</h2>
+           <div class="align-items-example">
+               <div class="item1" style="padding-top:30px;">one</div>
+               <div class="item2">two</div>
+               <div class="item3">three</div>
+           </div>
+       </div>
+       <div class="align-content">
+           <h2>align-content 交叉轴的对齐方式</h2>
+           <div class="align-content-example">
+               <div style="padding: 10px 10px; margin: 20px ; background-color: yellowgreen;">hhhhhhhhhhhh</div>
+               <div style="padding: 10px 10px; margin: 20px;background-color: yellowgreen;">hhhhhhhhhhhhhhhhnishibhhhhnishibushisha a  shazi</div>
+               <div style="padding: 10px 10px; margin: 20px;background-color: yellowgreen;">hhhhhhhhhhhhhhhhhhhhhh</div>
+           </div>
+       </div>
+   </div>
+    <div class="two">
+        <h1>flex 项目属性</h1>
+        <div class="order">
+            <h2>order</h2>
+            <div class="order-example">
+                <div class="item1" style="order : 3 ;">one</div>
+                <div class="item1" style="order : 1 ;">two</div>
+                <div class="item1" style=" order : 2 ;">three</div>
+            </div>
+        </div>
+        <div class="flex-flow">
+            <h2>flex-grow 放大比例</h2>
+            <div class="flex-grow-example">
+                <div class="item1" style="flex-grow: 1;">one</div>
+                <div class="item1" style="flex-grow: 2 ; ">two</div>
+                <div class="item1" style="flex-grow : 4;">three</div>
+            </div>
+        </div>
+        <div class="flex-shrink">
+            <h2>flex-shrink 缩小比例</h2>
+            <div class="flex-shrink-example">
+                <div style="margin: 10px; padding: 10px 10px; flex-shrink: 2; background-color: yellowgreen ;">lalalhahhahahah lalallalalalalalalla</div>
+                <div style="margin: 10px; padding: 10px 10px; flex-shrink: 4; background-color: yellow ;">lalallalallalalalalahahahahhahahlallalalallalallalhhhhhhhhhhhhhhhhhhhhhhhhhhla</div>
+            </div>
+        </div>
+        <div class="flex-basis">
+            <h2>flex-basis 分配额外空间尺寸</h2>
+            <div class="flex-basis-example">
+                <div class="item1" style="flex-basis: 40%;">hahha</div>
+                <div class="item1" style="flex-basis: 10em;">hahha</div>
+                <div class="item1" style="flex-basis: auto;">hahha</div>
+            </div>
+        </div>
+        <div class="flex">
+            <h2>flex （默认0 1 auto 代表三个值flex-grow flex-shrink flex-basis）</h2>
+        </div>
+        <div class="align-self">
+            <h2>align-self</h2>
+        </div>
+    </div>
+</body>
+</html>
