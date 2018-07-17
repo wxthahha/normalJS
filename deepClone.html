@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>递归实现js对象的深拷贝</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function deepClone(o1,o2) {
+            for(let k in o2){
+                if ( typeof o2[k] === 'object') {
+                    o1[k] = {} ;
+                    deepClone(o1[k],o2[k])
+                }else{
+                    o1[k] = o2[k];
+                }
+            }
+        }
+
+        //test
+        let obj = {
+            a : 1 ,
+            b : [1,2,4] ,
+            c : {}
+        };
+        let emptyObj = Object.create(null);
+        deepClone(emptyObj,obj);
+        console.log(emptyObj.a === obj.a)
+    </script>
+</body>
+</html>
