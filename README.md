@@ -8,3 +8,5 @@
 * shengbei.html 圣杯布局<br>
 * shuangfeiyi.html 双飞翼布局<br>
 * zhengzhe.html 常用正则<br>
+* event.htm 实现事件的绑定、触发、解绑 <br>
+* deepClone.html 实现js对象的深拷贝 <br>
