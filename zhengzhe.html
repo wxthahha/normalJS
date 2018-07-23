@@ -28,9 +28,10 @@
 
         //token全称 不超过60个字母 空格算一个字符
         function tokenNameAll(s) {
-            let rg = /^(?=.*[a-zA-Z])[a-zA-Z ]{1,60}$/
+            let rg = /^[a-zA-Z][a-zA-Z ]{0,60}$/
             return rg.test(s);
         }
+        
 
         //token简称 输入后默认大写显示 最多为6个字母
         function tokenNameSmall(s) {

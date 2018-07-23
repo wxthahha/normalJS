@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>class的优雅写法</title>
+</head>
+<body>
+	<script>
+		function Toast(option) {
+			this.prompt = '';
+			this.elem = null ;
+			this.init(option);
+		}
+
+		Toast.prototype = {
+			construct : Toast ,
+			//初始化
+			init : function (option) {
+				this.prompt = option.prompt || '' ;
+				this.render();
+				this.bindEvent();
+			},
+			//显示
+			show : function () {
+				this.changeStyle(this.elem,'display','block');
+			},
+			//隐藏
+			hide : function () {
+				this.changeStyle(this.elem, 'display', 'none');
+			},
+			//画出dom
+			render : function () {
+				var html = '';
+				this.elem = document.createElement('div');
+				this.changeStyle(this.elem,'display','none');
+
+				html += '<a class="J-close" href="javasscript:;" >x</a>'
+				html += '<p>'+this.prompt+'</p>'
+
+				this.elem.innerHTML = html ;
+				return document.body.appendChild(this.elem);
+			},
+			//改变样式
+			changeStyle : function (node,key,value) {
+				node.style[key] = value ;
+			},
+			//绑定事件
+			bindEvent : function () {
+				var self = this ;
+
+				this.addEvent(this.elem,'click',function (e) {
+					if (e.target.className.indexOf('J-close') != -1) {
+						console.log('close Toast');
+						self.hide();
+					}
+				})
+			},
+			//添加事件‘
+			addEvent : function (node,name,fn) {
+				var self = this ;
+
+				node.addEventListener(name,function (e) {
+					fn.apply(self,Array.prototype.slice.call(arguments));
+				},false)
+			}
+		}
+		var T = new Toast({prompt:'I am a toast'});
+		T.show();
+	</script>
+</body>
+</html>
